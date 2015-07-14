@@ -1,0 +1,27 @@
+#panel
+  #min_panel
+    #min_panel_down.pointer.hmoe-icon.btn-evnt(data-onclick='panel_hide') R
+    #min_panel_up.pointer.hmoe-icon.btn-evnt(data-onclick='panel_show') U
+  #progress_container.pointer
+    #progress
+      #progress_loading
+      #progress_now
+        p#progress_now_text 12:34
+      #progress_slider.drag
+      p#progress_text 34:56
+      p#progress_loading_text
+        span.hmoe-icon.animate-text(data-content="uvwxyz{|") u
+        | Loading...
+  ul#control
+    li#ctrl_repeat.pointer.button.blue.hmoe-icon.btn-evnt(data-onclick="repeat") W
+    li#ctrl_repeat.pointer.button.blue.hmoe-icon.btn-evnt(data-onclick="previous") c
+    li#ctrl_repeat.pointer.button.green.hmoe-icon.btn-evnt(data-onclick="pause") Z
+    li#ctrl_repeat.pointer.button.green.hmoe-icon.btn-evnt(data-onclick="play") X
+    li#ctrl_repeat.pointer.button.blue.hmoe-icon.btn-evnt(data-onclick="next") a
+    li#ctrl_repeat.pointer.button.blue.hmoe-icon.btn-evnt(data-onclick="random") V
+  #volume_container.pointer
+    #volume
+      #volume_now
+        #volume_slider.drag.hmoe-icon
+    #volume_text.normal.hmoe-icon Q
+
