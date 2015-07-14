@@ -1,0 +1,28 @@
+{
+  "name": "music",
+  "version": "0.0.0",
+  "authors": [
+    "BinotaLiu <binota@binota.org>"
+  ],
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "license": "Copyrights",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "jquery-cookie": "~1.4.1",
+    "jquery-migrate": "~1.2.1",
+    "underscore": "~1.8.3",
+    "backbone": "~1.2.1",
+    "jquery-ui": "~1.11.4"
+  }
+}
