@@ -25,6 +25,7 @@ module.exports = (grunt) ->
           'public/assets/css/hmoe-player.css': 'src/sass/hmoe-player.sass'
           'public/assets/css/hmoe-html5player-icon.css': 'src/sass/hmoe-html5player-icon.sass'
           'public/assets/css/reset.css': 'src/sass/reset.sass'
+          'public/assets/css/animation.css': 'src/sass/animation.sass'
 
   grunt.loadNpmTasks 'grunt-wiredep'
   grunt.loadNpmTasks 'grunt-contrib-jade'
