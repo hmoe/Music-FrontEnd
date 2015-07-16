@@ -1,0 +1,38 @@
+$c_icon: #444
+$panel_background: #FFF
+
+.popbox
+  z-index: 1100
+  border-radius: 1em
+  background: $panel_background
+  box-shadow: 0 0 2em #444
+  position: absolute
+  &.large
+    margin: 5% auto auto 15%
+    height: 90%
+    width: 70%
+  &.medium
+    margin: 5% auto auto 25%
+    height: 90%
+    width: 50%
+  &.small
+    margin: 25% auto auto 25%
+    height: 50%
+    width: 50%
+  .close
+    position: absolute
+    top: .5%
+    right: 5%
+    z-index: 1000
+    a
+      color: $c_icon
+      text-decoration: none
+      font-size: 2em
+    a:after
+      content: "8"
+  .content
+    height: 80%
+    width: 90%
+    margin: 10% 5%
+    overflow-y: scroll
+
