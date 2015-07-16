@@ -1,0 +1,42 @@
+$button_background: #67A4DE
+$button_highlight: #8DC67A
+$button_text: #FFF
+
+.button
+  text-align: center
+  color: $button_text
+  display: inline-bloc
+  border-radius: 10%
+  &.extra
+    line-height: 2.1em
+    width: 2.1em
+    height: 2.1em
+    font-size: 2.5em
+  &.large
+    line-height: 2em
+    width: 2em
+    font-size: 2em
+  &.medium
+    line-height: 1em
+    width: 1em
+    font-size: 1em
+  &.small
+    line-height: .6em
+    width: .6em
+    font-size: .6em
+  &.blue
+    background: $button_background
+    border-bottom: solid .15em $button_background - #333
+    &:hover
+      background: $button_background + #111
+    &:active
+      border-bottom: solid .07em $button_background - #333
+  &.green
+    border-bottom: solid .15em $button_highlight - #333
+    background: $button_highlight
+    &:hover
+      background: $button_highlight + #111
+    &:active
+      margin-bottom: .1em
+      border-bottom: solid .07em $button_highlight - #333
+
