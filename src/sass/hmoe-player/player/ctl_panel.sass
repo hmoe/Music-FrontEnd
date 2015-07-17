@@ -1,0 +1,61 @@
+$panel_background: rgba(255, 255, 255, .8)
+$panel_width: 260px
+$panel_height: 120px
+$panel_radius: 20px
+$panel_padding: $panel_radius
+
+#panel
+  background: $panel_background
+  width: $panel_width - ($panel_padding * 2)
+  height: $panel_height - (($panel_padding - 5) * 2)
+  overflow: hidden
+  padding: ($panel_padding - 5px) $panel_padding
+  border-radius: $panel_radius
+  box-shadow: 0 0 5px rgba(0, 0, 0, .3)
+  position: absolute
+  right: 67px
+  bottom: 27px
+  .progress
+    margin-bottom: 8px
+  #progress-container
+    width: 224px
+    .time-now,
+    .time-total,
+    .cache
+      float: left
+      font-size: 13px
+      color: #333
+    .time-now
+      text-align: left
+      width: 30%
+    .time-total
+      text-align: right
+      width: 30%
+    .cache
+      text-align: center
+      width: 40%
+  #control
+    text-align: center
+    margin-top: 30px
+    li
+      margin-left: 5px
+      &:first-child
+        margin-left: 0px
+  #min_panel
+    width: 1em
+    float: left
+  #volume-container
+    float: right
+    width: 100px
+    .progress
+      float: left
+      width: 67px
+      margin: 6px 8px
+    p
+      color: #333
+      float: left
+      width: 1em
+      &:hover
+        color: #666
+    
+
