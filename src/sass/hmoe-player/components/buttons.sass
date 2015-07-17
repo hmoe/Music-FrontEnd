@@ -1,7 +1,8 @@
 //button
-$button_background: #67A4DE
-$button_highlight: #8DC67A
+$button_background: #FFF
+$button_highlight: #D9534E
 $button_text: #666
+$button_text_highlight: #FFF
 
 .button
   text-align: center
@@ -9,6 +10,7 @@ $button_text: #666
   display: inline-block
   border-radius: 50%
   box-shadow: 0 0 5px rgba(0, 0, 0, .35)
+  background: $button_background
   &.text
     margin: .5em 0
     padding: .5em 1em
@@ -29,4 +31,7 @@ $button_text: #666
     font-size: 12px
   &:hover
     color: $button_text - #333
+  &.actived
+    color: $button_text_highlight
+    background: $button_highlight
 
