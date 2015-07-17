@@ -1,3 +1,6 @@
+$player_height: 600px
+$player_width: 1067px
+
 *
   -moz-user-select: none
   -webkit-user-select: none
@@ -8,6 +11,12 @@ body
   overflow: hidden
   width: 100%
   height: 100%
+
+#wrapper
+  width: $player_width
+  height: $player_height
+  margin: 0 auto
+  background: url(../images/bg.jpg) center center / cover no-repeat
 
 .hidden
   display: none
@@ -23,4 +32,9 @@ body
 
 .overlay
   background: rgba(0, 0, 0, .8)
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
 
