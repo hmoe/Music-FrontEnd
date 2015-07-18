@@ -1,10 +1,9 @@
-#pop_box_container.btn-evnt(data-onclick="pop_close")
+.overlay.btn-evnt(data-onclick="pop_close")
 
-#pop_box
-  #pop_close_btn
+#pop_box.popbox.large
+  #pop_close_btn.close
     a.hmoe-icon.btn-evnt(data-onclick="pop_close") 8
   include ./popbox/about.jade
-  include ./popbox/playlist.jade
   include ./popbox/setting.jade
 
 
