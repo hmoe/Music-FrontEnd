@@ -13,7 +13,7 @@ $infobox_btn_highlight_color: #333
   top: 0
   left: calc(50% - 300px)
   padding: 0 17px
-  width: 600px
+  width: 600px - (17px * 2)
   border-radius: 0 0 17px 17px
   background: $infobox_background
   box-shadow: 0 0 5px rgba(0, 0, 0, .35)
@@ -23,14 +23,14 @@ $infobox_btn_highlight_color: #333
     height: $infobox_cover_size
   .meta
     float: left
-    width: 480px
+    width: 460px
     margin: 13px 3px auto 3px
     text-align: center
-    .h1
+    .title
       font-size: $infobox_title_size
       line-height: $infobox_title_size + 2px
       color: $infobox_title_color
-    .h3
+    .album
       font-size: $infobox_album_size
       line-height: $infobox_album_size + 2px
       color: $infobox_album_color
