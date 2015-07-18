@@ -1,40 +1,30 @@
-$c_icon: #444
-$panel_background: #FFF
+$c_icon: #777
+$panel_background: rgba(255, 255, 255, .8)
 
 .popbox
   z-index: 1100
-  border-radius: 1em
+  border-radius: 15px
   background: $panel_background
-  box-shadow: 0 0 2em #444
+  box-shadow: 0 0 5px rgba(0, 0, 0, .35)
   position: absolute
-  top: 0
-  left: 0
-  &.large
-    margin: 5% auto auto 15%
-    height: 90%
-    width: 70%
-  &.medium
-    margin: 5% auto auto 25%
-    height: 90%
-    width: 50%
-  &.small
-    margin: 25% auto auto 25%
-    height: 50%
-    width: 50%
+  top: calc(50% - 145px)
+  left: calc(50% - 290px)
+  width: 580px
+  height: 290px
+  overflow: hidden
   .close
     position: absolute
-    top: .5%
-    right: 5%
-    z-index: 1000
+    right: 15px
+    top: 15px
     a
       color: $c_icon
       text-decoration: none
-      font-size: 2em
-    a:after
-      content: "8"
+      font-size: 18px
+      &:hover
+        color: $c_icon - #333
   .content
     height: 80%
     width: 90%
-    margin: 10% 5%
+    margin: 5% 5%
     overflow-y: scroll
 
