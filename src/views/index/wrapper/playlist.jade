@@ -2,6 +2,17 @@
   #playlist-search
     input(typt="text", plaseholder="找音乐？")
   #playlist
+    script#playlist-item-template(type="text/template")
+      li.playlist-item(data-id="<%= id %>",
+                       data-music="<%= music %>",
+                       data-lyric="<%= lyric %>",
+                       data-background="<%= background %>",
+                       data-cover="<%= cover %>",
+                       data-download="<%= download %>")
+        span.title
+          | <%= title %>
+        span.album
+          | <%= album %>
     ul#playlist-list.pointer
   #playlist-close.close
     span.hmoe-icon.pointer
