@@ -1,6 +1,11 @@
 #lyric.drag
   #lrc_line
   #lrc-container
+    script#lrc-content-template(type="text/template")
+      | <% for(i in lrc) { %>
+      li(data-time="<%= i %>")
+          | <%= lrc[i] %>
+      | <% } %>
     ul#lrc
   #lrc-min
     span.hmoe-icon
