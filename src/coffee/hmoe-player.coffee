@@ -31,9 +31,17 @@ hmoe_player =
       $('#ctrl-play').show()
       $('#ctrl-pause').hide()
     repeat: (actived) ->
-      if actived then $('#ctrl-repeat').addClass('actived') else $('#ctrl-repeat').removeClass('actived')
+      if actived
+        $('#ctrl-repeat').addClass('actived')
+        $('#ctrl-random').removeClass('actived')
+      else
+        $('#ctrl-repeat').removeClass('actived')
     random: (actived) ->
-      if actived then $('#ctrl-random').addClass('actived') else $('#ctrl-random').removeClass('actived')
+      if actived
+        $('#ctrl-random').addClass('actived')
+        $('#ctrl-repeat').removeClass('actived')
+      else
+        $('#ctrl-random').removeClass('actived')
     progress:
       now: (percent) ->
         fullWidth = $('#progress-container').width()
