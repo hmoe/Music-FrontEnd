@@ -21,8 +21,7 @@
     "jquery": "~2.1.4",
     "jquery-cookie": "~1.4.1",
     "jquery-migrate": "~1.2.1",
-    "underscore": "~1.8.3",
-    "backbone": "~1.2.1",
-    "jquery-ui": "~1.11.4"
+    "jquery-ui": "~1.11.4",
+    "underscore": "~1.8.3"
   }
 }
