@@ -69,6 +69,7 @@ class Player
     @audio.currentTime
   setCurrentTime: (time) ->
     @audio.currentTime = time
+  getBufferedLength: ->
     if @audio.buffered.length > 0
       @audio.buffered.end(@audio.buffered.length - 1)
     else
