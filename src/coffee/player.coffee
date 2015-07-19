@@ -48,6 +48,8 @@ class Player
     @audio.src = url
   getUrl: ->
     @audio.src
+  getNowPlaying: ->
+    @nowPlaying
   setNowPlaying: (id) ->
     @nowPlaying = id
     this.setUrl(if @playmode == 'random' then @randomPlaylist[id] else @playlist[id])
