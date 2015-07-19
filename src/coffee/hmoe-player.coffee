@@ -77,9 +77,9 @@ hmoe_player =
       $('#lrc').append(lrcContent({ lrc: lrc }))
 
   overlay: (actived) ->
-    if actived then $('#overlay').show() else $('#overlay').hide()
+    if actived then $('.overlay').show() else $('.overlay').hide()
   popbox: (actived) ->
-    if actived then $('#popbox').show() else $('#popbox').hide()
+    if actived then $('.popbox').show() else $('.popbox').hide()
 
 $( ->
   # create instance for Player class
@@ -105,6 +105,32 @@ $( ->
       hmoe_player.control_panel.progress.secondery(percent)
   )
 
+  # Binding UI events
+  $('#ctrl-play').click( ->
+    hmoe_player.control_panel.play()
+    player.play()
+  )
+  $('#ctrl-pause').click( ->
+    hmoe_player.control_panel.pause()
+    player.pause()
+  )
+  $('#ctrl-next').click( ->
+    player.next()
+  )
+  $('#ctrl-prev').click( ->
+    player.prev()
+  )
+  $('#ctrl-repeat').click( ->
+    actived = !(player.getPlayMode() == 'repeat')
+    hmoe_player.control_panel.repeat(actived)
+    player.setPlayMode(if actived then 'repeat' else 'normal')
+  )
+  $('#ctrl-random').click( ->
+    actived = !(player.getPlayMode() == 'random')
+    hmoe_player.control_panel.random(actived)
+    player.setPlayMode(if actived then 'random' else 'normal')
+  )
+
   playlist = []
 
   $.getJSON('test/list.json', (data) ->
@@ -112,6 +138,7 @@ $( ->
       playlist.push(i.music)
     player.setPlaylist(playlist)
     player.setNowPlaying(0)
+    hmoe_player.control_panel.play()
     player.play()
   )
 )
