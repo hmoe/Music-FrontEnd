@@ -85,7 +85,12 @@ $( ->
   # create instance for Player class
   player = new Player($,
     ended: ->
-      player.setNowPlaying(player.getCoreNext())
+      player.pause()
+      switch player.getPlayMode()
+        when 'repeat'
+          player.setCurrentTime 0
+        else
+          player.setNowPlaying player.getCoreNext()
       player.play()
     timeupdate: ->
       # timeupdate

@@ -39,9 +39,9 @@ class Player
       else
         --@nowPlaying
   getNext: ->
-    ++@nowPlaying
+    @nowPlaying + 1
   getPrev: ->
-    --@nowPlaying
+    @nowPlaying - 1
 
   # -- Set/get the music now playing --------
   setUrl: (url) ->
