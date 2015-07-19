@@ -52,6 +52,16 @@ class Player
     @nowPlaying = id
     this.setUrl(if @playmode == 'random' then @randomPlaylist[id] else @playlist[id])
 
+  # -- Play mode ---------------------------
+  getPlayMode: ->
+    @playmode
+  setPlayMode: (mode) ->
+    switch mode
+      when 'repeat', 'random'
+        @playmode = mode
+      else
+        @playmode = 'nromal'
+
   # -- Duration ----------------------------
   getDuration: ->
     @audio.duration
@@ -59,7 +69,6 @@ class Player
     @audio.currentTime
   setCurrentTime: (time) ->
     @audio.currentTime = time
-  getBufferedLength: ->
     if @audio.buffered.length > 0
       @audio.buffered.end(@audio.buffered.length - 1)
     else
