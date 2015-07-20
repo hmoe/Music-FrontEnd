@@ -84,10 +84,10 @@ class Player
     @audio.pause()
   next: ->
     this.pause()
-    @audio.setNowPlaying(++@nowPlaying)
+    this.setNowPlaying(++@nowPlaying)
     this.play()
   prev: ->
     this.pause()
-    @audio.setNowPlaying(--@nowPlaying)
+    this.setNowPlaying(--@nowPlaying)
     this.play()
 
