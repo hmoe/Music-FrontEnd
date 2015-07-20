@@ -26,18 +26,6 @@ class Player
     if @playmode == 'random' then @randomPlaylist else @playlist
 
   # -- Next and Previous -------------------
-  getCoreNext: ->
-    switch @playmode
-      when 'repeat'
-        this.getNowPlaying()
-      else
-        ++@nowPlaying
-  getCorePrev: ->
-    switch @playmode
-      when 'repeat'
-        this.getNowPlaying()
-      else
-        --@nowPlaying
   getNext: ->
     @nowPlaying + 1
   getPrev: ->
