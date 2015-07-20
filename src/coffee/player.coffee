@@ -21,15 +21,24 @@ class Player
   setPlaylist: (playlist) ->
     @playlist = playlist
     # Generate a random playlist
-    @randomPlaylist = playlist
+    @randomPlaylist = playlist.slice 0 # clone playlist as new instance
+    @randomPlaylist.sort ->
+      if Math.random() > 0.5 then 1 else -1
+    return
   getPlaylist: ->
     if @playmode == 'random' then @randomPlaylist else @playlist
 
   # -- Next and Previous -------------------
   getNext: ->
-    @nowPlaying + 1
+    if @nowPlaying + 1 >= @playlist.length
+        0
+    else
+        @nowPlaying + 1
   getPrev: ->
-    @nowPlaying - 1
+    if @nowPlaying - 1 < 0
+        @playlist.length - 1
+    else
+        @nowPlaying - 1
 
   # -- Set/get the music now playing --------
   setUrl: (url) ->
@@ -40,7 +49,7 @@ class Player
     @nowPlaying
   setNowPlaying: (id) ->
     @nowPlaying = id
-    this.setUrl(if @playmode == 'random' then @randomPlaylist[id] else @playlist[id])
+    this.setUrl(this.getPlaylist()[id].music)
 
   # -- Play mode ---------------------------
   getPlayMode: ->
@@ -50,7 +59,7 @@ class Player
       when 'repeat', 'random'
         @playmode = mode
       else
-        @playmode = 'nromal'
+        @playmode = 'normal'
 
   # -- Duration ----------------------------
   getDuration: ->
@@ -72,10 +81,10 @@ class Player
     @audio.pause()
   next: ->
     this.pause()
-    this.setNowPlaying(++@nowPlaying)
+    this.setNowPlaying(this.getNext())
     this.play()
   prev: ->
     this.pause()
-    this.setNowPlaying(--@nowPlaying)
+    this.setNowPlaying(this.getPrev())
     this.play()
 

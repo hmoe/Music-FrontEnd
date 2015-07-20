@@ -81,6 +81,8 @@ hmoe_player =
   popbox: (actived) ->
     if actived then $('.popbox').show() else $('.popbox').hide()
 
+player = ''
+
 $( ->
   # create instance for Player class
   player = new Player($,
@@ -90,7 +92,7 @@ $( ->
         when 'repeat'
           player.setCurrentTime 0
         else
-          player.setNowPlaying player.getCoreNext()
+          player.next()
       player.play()
     timeupdate: ->
       # timeupdate
@@ -136,12 +138,8 @@ $( ->
     player.setPlayMode(if actived then 'random' else 'normal')
   )
 
-  playlist = []
-
   $.getJSON('test/list.json', (data) ->
-    for key, i of data
-      playlist.push(i.music)
-    player.setPlaylist(playlist)
+    player.setPlaylist(data)
     player.setNowPlaying(0)
     hmoe_player.control_panel.play()
     player.play()
