@@ -9,6 +9,9 @@ hmoe_player =
     album: (album) ->
       $('#infobox .album').html(album)
     cover: (url) ->
+      # set to default cover image
+      $('#infobox .cover').attr('src', 'assets/images/unknow.png')
+      # loading specified image
       cover = new Image()
       cover.onload = ->
         $('#infobox .cover').attr('src', cover.src)
@@ -82,7 +85,7 @@ hmoe_player =
     if actived then $('.popbox').show() else $('.popbox').hide()
   background: (url) ->
     $('#music-bg').hide()
-    bg = new Img()
+    bg = new Image()
     bg.src = url
     bg.onload = ->
       $('#music-bg').attr('src', bg.src)
@@ -91,7 +94,20 @@ hmoe_player =
 player = ''
 
 $( ->
-  # create instance for Player class
+  # function to update informations on the page
+  updatePage = ->
+    info = player.getMusicInfo()
+    hmoe_player.infobox.title info.title
+    hmoe_player.infobox.album info.album
+    hmoe_player.infobox.cover info.cover
+    hmoe_player.infobox.download info.download
+    hmoe_player.background info.background
+    # set lyric
+    $.get(info.lyric, (data) ->
+    ).fail( ->
+    )
+
+  # create the instance for Player class
   player = new Player($,
     ended: ->
       player.pause()
@@ -100,6 +116,7 @@ $( ->
           player.setCurrentTime 0
         else
           player.next()
+      updatePage()
       player.play()
     timeupdate: ->
       # timeupdate
@@ -148,6 +165,7 @@ $( ->
     player.setPlaylist data
     player.setNowPlaying 0
     hmoe_player.control_panel.play()
+    updatePage()
     player.play()
   )
 )
