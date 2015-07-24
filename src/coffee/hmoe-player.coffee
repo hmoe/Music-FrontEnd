@@ -80,6 +80,13 @@ hmoe_player =
     if actived then $('.overlay').show() else $('.overlay').hide()
   popbox: (actived) ->
     if actived then $('.popbox').show() else $('.popbox').hide()
+  background: (url) ->
+    $('#music-bg').hide()
+    bg = new Img()
+    bg.src = url
+    bg.onload = ->
+      $('#music-bg').attr('src', bg.src)
+      $('#music-bg').show()
 
 player = ''
 
@@ -113,34 +120,33 @@ $( ->
   )
 
   # Binding UI events
-  $('#ctrl-play').click( ->
+  $('#ctrl-play').click ->
     hmoe_player.control_panel.play()
     player.play()
-  )
-  $('#ctrl-pause').click( ->
+
+  $('#ctrl-pause').click ->
     hmoe_player.control_panel.pause()
     player.pause()
-  )
-  $('#ctrl-next').click( ->
+
+  $('#ctrl-next').click ->
     player.next()
-  )
-  $('#ctrl-prev').click( ->
+
+  $('#ctrl-prev').click ->
     player.prev()
-  )
-  $('#ctrl-repeat').click( ->
+
+  $('#ctrl-repeat').click ->
     actived = !(player.getPlayMode() == 'repeat')
     hmoe_player.control_panel.repeat(actived)
     player.setPlayMode(if actived then 'repeat' else 'normal')
-  )
-  $('#ctrl-random').click( ->
+
+  $('#ctrl-random').click ->
     actived = !(player.getPlayMode() == 'random')
     hmoe_player.control_panel.random(actived)
     player.setPlayMode(if actived then 'random' else 'normal')
-  )
 
   $.getJSON('test/list.json', (data) ->
-    player.setPlaylist(data)
-    player.setNowPlaying(0)
+    player.setPlaylist data
+    player.setNowPlaying 0
     hmoe_player.control_panel.play()
     player.play()
   )

@@ -50,6 +50,8 @@ class Player
   setNowPlaying: (id) ->
     @nowPlaying = id
     this.setUrl(this.getPlaylist()[id].music)
+  getMusicInfo: ->
+    this.getPlaylist()[@nowPlaying]
 
   # -- Play mode ---------------------------
   getPlayMode: ->
